@@ -4,6 +4,7 @@ import deb.gabrielbarbosa.todolist.dto.ToDoCreateDTO;
 import deb.gabrielbarbosa.todolist.dto.ToDoListDTO;
 import deb.gabrielbarbosa.todolist.entities.ToDo;
 import deb.gabrielbarbosa.todolist.repositories.ToDoRepository;
+import jakarta.persistence.EntityExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,12 @@ public class ToDoService {
         return toDos.stream()
                 .map(ToDoListDTO::new)
                 .collect(Collectors.toList());
+    }
+
+    public void delete(Long toDoId) {
+        ToDo toDo = toDoRepository.findById(toDoId).orElseThrow(EntityExistsException::new);
+        toDo.delete();
+        toDoRepository.save(toDo);
     }
 
 }

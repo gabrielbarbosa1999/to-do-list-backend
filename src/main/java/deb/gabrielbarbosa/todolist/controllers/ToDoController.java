@@ -25,4 +25,9 @@ public class ToDoController {
         return toDoService.findAll();
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        toDoService.delete(id);
+    }
+
 }
