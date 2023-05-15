@@ -30,4 +30,9 @@ public class ToDoController {
         toDoService.delete(id);
     }
 
+    @PutMapping("/{id}")
+    public void done(@PathVariable Long id) {
+        toDoService.done(id);
+    }
+
 }

@@ -39,4 +39,10 @@ public class ToDoService {
         toDoRepository.save(toDo);
     }
 
+    public void done(Long toDoId) {
+        ToDo toDo = toDoRepository.findById(toDoId).orElseThrow(EntityExistsException::new);
+        toDo.done();
+        toDoRepository.save(toDo);
+    }
+
 }

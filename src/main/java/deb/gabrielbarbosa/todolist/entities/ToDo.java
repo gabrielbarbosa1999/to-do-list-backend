@@ -34,4 +34,8 @@ public class ToDo {
         this.deletedAt = LocalDateTime.now();
     }
 
+    public void done() {
+        this.done = LocalDateTime.now();
+    }
+
 }
