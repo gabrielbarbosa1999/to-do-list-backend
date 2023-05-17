@@ -31,7 +31,7 @@ public class ToDoController {
     }
 
     @PutMapping
-    public void done(@RequestParam(value = "id") Long id) {
+    public void done(@RequestParam("id") Long id) {
         toDoService.done(id);
     }
 
