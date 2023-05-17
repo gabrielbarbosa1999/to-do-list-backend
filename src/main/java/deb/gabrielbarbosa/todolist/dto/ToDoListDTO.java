@@ -1,7 +1,6 @@
 package deb.gabrielbarbosa.todolist.dto;
 
 import deb.gabrielbarbosa.todolist.entities.ToDo;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
